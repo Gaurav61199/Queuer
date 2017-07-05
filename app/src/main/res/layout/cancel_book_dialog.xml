@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/cancelBkDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel booked token?"
+        android:padding="24dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+    <Button
+        android:layout_below="@id/cancelBkDialogTitle"
+        android:layout_alignParentRight="true"
+        android:id="@+id/YesCancelBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:layout_marginRight="24dp"
+        android:background="#FFF"
+        android:textColor="@color/colorAccent"
+        android:outlineProvider="none"
+        />
+    <Button
+        android:id="@+id/NoCancelBt"
+        android:layout_toLeftOf="@id/YesCancelBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cancelBkDialogTitle"
+        android:text="NO"
+        android:layout_marginRight="8dp"
+        android:background="#FFF"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="24dp"
+        android:outlineProvider="none"
+        />
+
+</RelativeLayout>

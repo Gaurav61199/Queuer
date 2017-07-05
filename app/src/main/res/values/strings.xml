@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Queuer</string>
+    <string name="homeToolbarTitle">Home</string>
+    <string name="formToolbarTitle">Fill in details to reserve token</string>
+    <string name="not1">not1</string>
+    <string name="not2">not2</string>
+</resources>

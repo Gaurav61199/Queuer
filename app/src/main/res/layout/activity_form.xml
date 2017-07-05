@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    android:id="@+id/activity_form"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gaurav.android.queuer.FormActivity"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/form_toolbar"
+        layout="@layout/app_toolbar"
+        />
+    <include layout="@layout/cardview_toolbar"
+             android:id="@+id/form_toolbar2"/>
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TokenFetchingProgressBar"
+        android:orientation="vertical"
+        android:layout_margin="32dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:indeterminate="true"
+            android:alpha="1"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wait while we get token for you"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:id="@+id/form_scrollview"
+        android:layout_marginTop="10dp">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/enterName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/edittextstyle"
+                android:gravity="center"
+                android:hint="Patient's Name"
+                android:inputType="textNoSuggestions"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                >
+
+
+
+            </android.support.v7.widget.AppCompatEditText>
+
+            <RadioGroup
+                android:id="@+id/GenderRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:orientation="horizontal"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:paddingLeft="72dp"
+                    android:text="Gender"
+                    />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/MRadioBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="Male"
+                    />
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:id="@+id/FRadioBt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="Female"
+                    />
+
+            </RadioGroup>
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/enterContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/edittextstyle"
+                android:gravity="center"
+                android:hint="Contact Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                />
+
+            <Button
+                android:id="@+id/formSubmitBt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:minHeight="36dp"
+                android:minWidth="80dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Submit"
+                android:textColor="#FFF"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
+    </ScrollView>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

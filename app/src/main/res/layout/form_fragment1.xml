@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DISCOVER CLINICS AND QUEUE STATUS"
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"
+        android:maxLines="1"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp"
+        >
+        <ImageView
+            android:id="@+id/area_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/area_icon"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Area/Locality"
+            android:textSize="18sp"
+            android:layout_marginLeft="2dp"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/area_icon"
+            android:layout_centerVertical="true"
+            />
+
+
+    </RelativeLayout>
+
+
+    <Spinner
+        android:id="@+id/area_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EFEFEFEF"
+        android:layout_margin="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:alpha="1"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp">
+
+        <ImageView
+            android:id="@+id/clinic_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/clinic_icon"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Select Clinic/Doctor"
+            android:textSize="18sp"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@id/clinic_icon"
+            android:padding="8dp"/>
+
+    </RelativeLayout>
+
+
+
+
+    <Spinner
+        android:id="@+id/clinic_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/alert_menu"
+        android:orderInCategory="1"
+        android:title="Alert Setting"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/alert"
+        />
+
+    <item android:id="@+id/info_menu"
+        android:icon="@drawable/information"
+        android:title="Know more"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="2"/>
+
+</menu>

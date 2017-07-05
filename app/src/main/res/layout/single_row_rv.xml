@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/bookDet1row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E0E0E0"
+            android:elevation="1dp"
+            >
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/bookingDetHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOKEN BOOKING DETAIL"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:textStyle="bold"
+
+                />
+
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/bookDetStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"/>
+
+            <ImageButton
+                android:id="@+id/bookTokenDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/booktokendelete"
+                android:layout_toLeftOf="@id/bookDetStatus"
+                android:background="#E0E0E0"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:padding="10dp"
+
+                />
+
+            <ImageButton
+                android:id="@+id/bookDetSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/token_send"
+                android:layout_toLeftOf="@id/bookTokenDelete"
+                android:background="#E0E0E0"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:padding="10dp"
+                />
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/namehead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient's Name"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/contacthead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact number"
+                android:layout_below="@id/namehead"
+                android:layout_margin="4dp"
+                android:textStyle="bold"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/namefield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/contacthead"
+                android:layout_margin="4dp"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/contactfield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/contacthead"
+                android:layout_below="@id/namefield"
+                android:gravity="center_vertical"
+                android:layout_margin="4dp"
+                />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/idhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                android:layout_below="@id/contacthead"
+                android:layout_margin="4dp"
+                android:textStyle="bold"
+                />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/idfield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/contacthead"
+                android:layout_below="@id/contactfield"
+                android:layout_margin="4dp"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tokennohead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Token number"
+                android:layout_below="@id/idhead"
+                android:layout_margin="4dp"
+                android:textStyle="bold"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tokennofield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/contacthead"
+                android:layout_below="@id/idfield"
+                android:layout_margin="4dp"
+                />
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/datehead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:layout_below="@id/tokennohead"
+                android:layout_margin="4dp"
+                android:textStyle="bold"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/datefield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/contacthead"
+                android:layout_below="@id/tokennofield"
+                android:layout_margin="4dp"
+                />
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.v7.widget.CardView>

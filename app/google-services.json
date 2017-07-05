@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "654073125813",
+    "firebase_url": "https://queuer-3999c.firebaseio.com",
+    "project_id": "queuer-3999c",
+    "storage_bucket": "queuer-3999c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654073125813:android:739cfa0d657036f0",
+        "android_client_info": {
+          "package_name": "com.gaurav.android.queuer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654073125813-t7kkqv6s1980ffev28cgd213iqphpjno.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gaurav.android.queuer",
+            "certificate_hash": "c979a0d05fa22973a3d4b484767f985ef394db25"
+          }
+        },
+        {
+          "client_id": "654073125813-m18lb3jqmkkpl0p32mr915srqv6vvpqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMRm52V9UqHvltM3qIY2acZxF8rEFnYNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654073125813-m18lb3jqmkkpl0p32mr915srqv6vvpqo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
