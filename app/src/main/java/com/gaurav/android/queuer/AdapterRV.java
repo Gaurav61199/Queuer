@@ -3,11 +3,6 @@ package com.gaurav.android.queuer;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +27,7 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
     Context context;
     LayoutInflater inflater;
     private DatabaseReference PatInfoDB;
+    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 
 
     public AdapterRV(Context context, ArrayList<PatientInfo> info) {
@@ -69,8 +65,9 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
                     @Override
                     public void onClick(View view) {
                         // deleting the details from Firebase Database
-                        PatInfoDB = FirebaseDatabase.getInstance().getReference();
-                        PatInfoDB.child("Patients").child(pi.tokenNo.toString()).removeValue();
+                        //PatInfoDB = FirebaseDatabase.getInstance().getReference();
+                        rootRef.child(pi.cPlace).child("Clinics").child(pi.cName).child("Patients").child(pi.tokenNo.toString()).removeValue();
+                       // PatInfoDB.child("Patients").child(pi.tokenNo.toString()).removeValue();
                         // deleting the details from Shared  Preference
                         GetArrayList mGetArrayList = (GetArrayList) context.getApplicationContext();
                         mGetArrayList.removeFromSP(pi.tokenNo, pi.tDateTime);

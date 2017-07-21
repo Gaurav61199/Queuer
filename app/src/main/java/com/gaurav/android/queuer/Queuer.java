@@ -30,7 +30,7 @@ public class Queuer extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_queuer);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true); //data is locally cached to maintain state offline and handle network interruption
+
 
 
         mToolbar = (Toolbar) findViewById(R.id.home_toolbar);
