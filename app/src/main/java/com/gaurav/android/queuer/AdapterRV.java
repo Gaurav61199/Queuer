@@ -26,8 +26,8 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
     public ArrayList<PatientInfo> mDetails = new ArrayList<>();
     Context context;
     LayoutInflater inflater;
-    private DatabaseReference PatInfoDB;
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+
 
 
     public AdapterRV(Context context, ArrayList<PatientInfo> info) {
@@ -46,6 +46,7 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
+        holder.setIsRecyclable(false);
         final PatientInfo pi = mDetails.get(position);
         holder.naam.setText(pi.pName + " - " + pi.pGender);
         holder.kramank.setText(pi.pContact);
@@ -87,6 +88,7 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
 
             }
         });
+
     }
 
     @Override

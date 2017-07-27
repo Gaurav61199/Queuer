@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+       <!-- <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -18,13 +18,14 @@
             android:padding="8dp"
             android:text="DISCOVER CLINICS AND QUEUE STATUS"
             android:textSize="18sp"
-            />
+            android:textColor="@color/colorPrimaryDark"
+            /> -->
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:padding="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             >
 
             <ImageView
@@ -60,8 +61,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:padding="8dp">
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            >
 
             <ImageView
                 android:id="@+id/clinic_icon"
@@ -98,37 +100,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/f1DetailsContainer"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:visibility="gone">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
             android:stretchColumns="1"
             >
             <TableRow
                 android:padding="4dp">
                 <TextView
-                    android:text="Available Token Number"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
+                    android:text="AVAILABLE TOKEN NUMBER"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:gravity="center"
                     />
                 <TextView
                     android:id="@+id/ATNValue"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:textStyle="bold"/>
             </TableRow>
             <TableRow
                 android:padding="4dp">
                 <TextView
-                    android:text="Ongoing Token Number"
-                    android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:text="ONGOING TOKEN NUMBER"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
                 <TextView
                     android:id="@+id/OTNValue"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:textStyle="bold"/>
             </TableRow>
@@ -148,7 +155,7 @@
         android:background="#FFF"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-
+        style="?android:attr/borderlessButtonStyle"
         />
     <Button
         android:id="@+id/f1Back"
@@ -161,7 +168,7 @@
         android:background="#FFF"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@id/f1Next"
-
+        style="?android:attr/borderlessButtonStyle"
         />
 
 

@@ -15,8 +15,6 @@
         android:id="@+id/form_toolbar"
         layout="@layout/app_toolbar"
         />
-    <include layout="@layout/cardview_toolbar"
-             android:id="@+id/form_toolbar2"/>
     <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

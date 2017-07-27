@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class Queuer extends AppCompatActivity{
+public class Queuer extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private FloatingActionButton mFAB;
@@ -32,12 +32,11 @@ public class Queuer extends AppCompatActivity{
         setContentView(R.layout.activity_queuer);
 
 
-
         mToolbar = (Toolbar) findViewById(R.id.home_toolbar);
         setSupportActionBar(mToolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.appRecyclerView);
         GetArrayList gal = ((GetArrayList) getApplicationContext());
-        arv = new AdapterRV(this,gal.GetFromSP());
+        arv = new AdapterRV(this, gal.GetFromSP());
 
         mRecyclerView.setAdapter(arv);
 
@@ -50,7 +49,7 @@ public class Queuer extends AppCompatActivity{
         mFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Queuer.this,FormActivity2.class);
+                Intent intent = new Intent(Queuer.this, FormActivity2.class);
                 startActivity(intent);
 
             }
@@ -59,31 +58,39 @@ public class Queuer extends AppCompatActivity{
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         arv.notifyDataSetChanged();
     }
 
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
 
     }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.toolbar_menu,menu);
+        inflater.inflate(R.menu.toolbar_menu, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.alert_menu){
-            Toast.makeText(this,"Alert Selected",Toast.LENGTH_SHORT).show();
+        if (id == R.id.alert_menu) {
+            Toast.makeText(this, "Alert Selected", Toast.LENGTH_SHORT).show();
         }
         return true;
+    }
+    // this method is override to close the app on back press when user in queuer activity
+    //without this the app will go back to Form fragment2 of formActivity and will lead to data corruption by certain user action
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        
     }
 }

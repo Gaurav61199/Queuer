@@ -9,6 +9,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -19,6 +20,7 @@ public class GetArrayList extends Application {   // extending Application makes
 
 
     public SharedPreferences storingData,restoringData,deleteData ;
+    ArrayList<PatientInfo> tp =new ArrayList<>();
 
     @Override
     public void onCreate(){
@@ -33,8 +35,8 @@ public class GetArrayList extends Application {   // extending Application makes
         SharedPreferences.Editor storageEditor = storingData.edit();
         Gson gson = new Gson();// Gson is an API to convert Object data into Json data
         String json = gson.toJson(gsonData);
-        storageEditor.putString(gsonData.tokenNo.toString() +gsonData.tDateTime ,json);
-/* tokenNo and TDateTime both is used for naming Shared Preference file
+        storageEditor.putString(gsonData.tDateTime ,json);
+/* TDateTime is used for naming Shared Preference file
  to avoid conflicting of name in case the file in SP is not deleted and user booked the token on some other day with same token no*/
         storageEditor.commit();
     }
@@ -46,12 +48,29 @@ public class GetArrayList extends Application {   // extending Application makes
         restoringData = getSharedPreferences("com.gaurav.queuer",MODE_PRIVATE);
         //Fetching the preferences is done directly on the SharedPreferences object, SharedPreferences.Editor is not required
         Map<String,?> entries = restoringData.getAll(); //throws exception
+
         //fetching all entries in Shared Preferences
         for (Map.Entry<String,?> listentry : entries.entrySet() ){
-            returnValue = gson.fromJson((String) listentry.getValue(),PatientInfo.class);
+            returnValue = gson.fromJson((String)listentry.getValue(),PatientInfo.class);
             SPArray.add(returnValue);
         }
-        return SPArray;
+
+        // as data from getAll() method and Map<> is inconsistent(not in order) it is needed to be sorted for proper sequence
+        return sortSPArray(SPArray);
+    }
+
+    private ArrayList<PatientInfo> sortSPArray(ArrayList<PatientInfo> spArray) {
+
+        for(int i=0 ; i< spArray.size();i++ ){
+                for (int j =0 ; j< (spArray.size()- i-1);j++){
+                    if (spArray.get(j).mCalendar.before(spArray.get(j+1).mCalendar)){   // before so that latest booking appears at top
+                       PatientInfo temp = spArray.get(j); // sorting is done with respect to the time of booking
+                        spArray.set(j,spArray.get(j+1));
+                        spArray.set(j+1,temp);
+                    }
+                }
+            }
+        return spArray;
     }
 
 
@@ -59,10 +78,12 @@ public class GetArrayList extends Application {   // extending Application makes
 
         deleteData =getSharedPreferences("com.gaurav.queuer",MODE_PRIVATE);
         if (deleteData != null){
-            deleteData.edit().remove(tokenNo.toString() + tDateTime).commit();
+            deleteData.edit().remove(tDateTime).commit();
         }else{
             Log.d("STATE", "deleteData is  null");
         }
 
     }
+
+
 }

@@ -62,16 +62,16 @@ public class FormActivity extends AppCompatActivity {
         setSupportActionBar(mtoolbar);
 
         //Setting toolbar CardView center to the bottom of green view background   |  getViewTreeObserver scan for layout change and Display metrics returns density and font of screen
-        toolBarCV=(CardView) findViewById(R.id.CV);
-        toolBarCV.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
-                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)toolBarCV.getLayoutParams();
-                params.setMargins((int) ((16*displayMetrics.density)+0.5), (-toolBarCV.getHeight()/2),(int) ((16*displayMetrics.density)+0.5),(int) ((0*displayMetrics.density)+0.5));
-                toolBarCV.setLayoutParams(params);
-            }
-        });
+//        toolBarCV=(CardView) findViewById(R.id.CV);
+//        toolBarCV.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
+//                DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
+//                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)toolBarCV.getLayoutParams();
+//                params.setMargins((int) ((16*displayMetrics.density)+0.5), (-toolBarCV.getHeight()/2),(int) ((16*displayMetrics.density)+0.5),(int) ((0*displayMetrics.density)+0.5));
+//                toolBarCV.setLayoutParams(params);
+//            }
+//        });
 
         FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ATN = mDatabase.getReference("AvailableTokenNumber");

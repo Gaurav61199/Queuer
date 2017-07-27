@@ -5,25 +5,27 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".GetArrayList"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Queuer"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".GetArrayList">
-        <activity android:name=".Queuer"
-            android:label="@string/homeToolbarTitle">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Queuer"
+            android:label="@string/homeToolbarTitle"
+            >
 
-            <intent-filter>
+            <intent-filter
+                android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".FormActivity"
-            android:label="@string/formToolbarTitle">
-        </activity>
-        <activity android:name=".FormActivity2"/>
+        <activity
+            android:name=".FormActivity2"
+            />
     </application>
 
 </manifest>
