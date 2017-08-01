@@ -1,10 +1,10 @@
 package com.gaurav.android.queuer;
 
+
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +22,6 @@ import com.google.firebase.database.Transaction;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Random;
 
 /**
@@ -131,6 +130,7 @@ public class SFragment extends Fragment implements View.OnClickListener {
                                 Toast.makeText(getActivity(), "Token booked: " + data.tokenNo.toString(), Toast.LENGTH_SHORT).show();
                                 GetArrayList gal = (GetArrayList) getActivity().getApplicationContext();    // GetArrayList declared as Global
                                 gal.SaveInSP(data);  //Saving Object in Shared Preferences
+                                gal.setHighlight(1);
                                 //gal.save(data);
                                 Intent intent = new Intent(getActivity(), Queuer.class);
                                 startActivity(intent);

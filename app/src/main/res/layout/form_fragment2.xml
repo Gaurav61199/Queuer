@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.gaurav.android.queuer.SlideRelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:background="#FFF">
 
@@ -157,3 +161,4 @@
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>
+</com.gaurav.android.queuer.SlideRelativeLayout>

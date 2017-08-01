@@ -9,7 +9,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -20,7 +19,18 @@ public class GetArrayList extends Application {   // extending Application makes
 
 
     public SharedPreferences storingData,restoringData,deleteData ;
-    ArrayList<PatientInfo> tp =new ArrayList<>();
+
+    public int getHighlight() {
+        return highlight;
+    }
+
+    public void setHighlight(int highlight) {
+        GetArrayList.highlight = highlight;
+    }
+
+    private static int highlight;  /* variable is declared as static as only one instance is required to be created to preserve
+    the state of highlight else it get reset*/
+
 
     @Override
     public void onCreate(){
