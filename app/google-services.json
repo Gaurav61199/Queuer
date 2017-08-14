@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "654073125813-hde741g07jsdg1qubbad6tsqm36ngaau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gaurav.android.queuer",
+            "certificate_hash": "6ca4f377cf57b8e848fc118e580a7a198de55d67"
+          }
+        },
+        {
           "client_id": "654073125813-t7kkqv6s1980ffev28cgd213iqphpjno.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

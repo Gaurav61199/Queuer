@@ -16,16 +16,21 @@
             android:label="@string/homeToolbarTitle"
             >
 
+        </activity>
+        <activity
+            android:name=".FormActivity2"
+            />
+        <activity
+            android:name=".login_activity"
+            android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter
                 android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".FormActivity2"
-            />
     </application>
 
 </manifest>

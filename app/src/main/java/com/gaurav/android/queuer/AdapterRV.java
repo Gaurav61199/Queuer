@@ -6,13 +6,13 @@ import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -47,7 +47,7 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.single_row_rw, parent, false);
+        View view = inflater.inflate(R.layout.single_row_rv, parent, false);
         return new ViewHolder(view);
 
     }
@@ -60,7 +60,7 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
         OTN.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                holder.maujoodatoken.setText("ONGOING TOKEN NUMBER" + ":   " + dataSnapshot.getValue().toString());
+                holder.maujoodatoken.setText("Ongoing Token Number" + ":   " + dataSnapshot.getValue().toString());
             }
 
             @Override
@@ -69,8 +69,6 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
             }
         });
         holder.naam.setText(pi.pName + " - " + pi.pGender);
-        holder.kramank.setText(pi.pContact);
-        holder.pehchaanpatra.setText(pi.pID + "");
         holder.dinank.setText(pi.tDateTime);
         holder.kram.setText(pi.tokenNo + "");
         holder.Chikitshalaya.setText(pi.cName);
@@ -97,7 +95,6 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
                     @Override
                     public void onClick(View view) {
                         // deleting the details from Firebase Database
-                        //PatInfoDB = FirebaseDatabase.getInstance().getReference();
                         rootRef.child(pi.cPlace).child("Clinics").child(pi.cName).child("Patients").child(pi.tokenNo.toString()).removeValue();
                        // PatInfoDB.child("Patients").child(pi.tokenNo.toString()).removeValue();
                         // deleting the details from Shared  Preference
@@ -129,12 +126,10 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView naam;
-        public TextView kramank;
-        public TextView pehchaanpatra;
         public TextView dinank;
         public TextView kram;
         public ImageButton cancelBook;
-        public TableLayout InfoArea;
+        public LinearLayoutCompat InfoArea;
         public TextView Chikitshalaya;
         public TextView maujoodatoken;
 
@@ -143,12 +138,10 @@ public class AdapterRV extends RecyclerView.Adapter<AdapterRV.ViewHolder> {
             maujoodatoken = (TextView) itemView.findViewById(R.id.RVListClinicOTN);
             Chikitshalaya = (TextView) itemView.findViewById(R.id.RVListClinicName);
             naam = (TextView) itemView.findViewById(R.id.namefield);
-            kramank = (TextView) itemView.findViewById(R.id.contactfield);
-            pehchaanpatra = (TextView) itemView.findViewById(R.id.idfield);
             dinank = (TextView) itemView.findViewById(R.id.datefield);
             kram = (TextView)itemView.findViewById(R.id.tokennofield);
             cancelBook = (ImageButton)itemView.findViewById(R.id.bookTokenDelete);
-            InfoArea = (TableLayout) itemView.findViewById(R.id.contentArea);
+            InfoArea = (LinearLayoutCompat) itemView.findViewById(R.id.contentArea);
         }
 
     }

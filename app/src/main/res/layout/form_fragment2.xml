@@ -8,46 +8,61 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:background="#FFF">
+        android:layout_margin="16dp"
+        android:background="#FFF">
 
+        <android.support.v7.widget.LinearLayoutCompat
+            style="@style/LinearLayout"
+            android:id="@+id/TokenFetchingProgressBar"
+            android:layout_margin="32dp"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:indeterminate="true"
+                android:alpha="1"
+                />
+
+            <TextView
+                style="@style/textview"
+                android:text="Wait while we get token for you"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+        </android.support.v7.widget.LinearLayoutCompat>
     <RelativeLayout
+        android:id="@+id/f2Container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="8dp">
 
         <TextView
             android:id="@+id/formTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ENTER PATIENT'S DETAIL"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            style="@style/LinearLayout.RelativeLayout"
+            android:text="ENTER PERSON'S DETAIL"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp"/>
 
 
         <LinearLayout
             android:id="@+id/f2DetailsContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/LinearLayout"
             android:layout_marginBottom="8dp"
-            android:layout_below="@id/formTitle"
-            android:orientation="vertical">
+            android:layout_below="@id/formTitle">
 
             <ScrollView
                 android:id="@+id/form_scrollview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textview"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:focusable="false"
                 android:focusableInTouchMode="false">
 
                 <android.support.v7.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    style="@style/LinearLayout">
 
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/enterName"
@@ -67,8 +82,7 @@
 
                     <RadioGroup
                         android:id="@+id/GenderRadioGroup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        style="@style/textview"
                         android:layout_margin="6dp"
                         android:orientation="horizontal"
                         >
@@ -112,6 +126,7 @@
                         android:hint="Contact Number"
                         android:inputType="number"
                         android:maxLength="10"
+                        android:imeOptions="actionDone"
                         />
                 </android.support.v7.widget.LinearLayoutCompat>
             </ScrollView>
@@ -136,12 +151,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/f2DetailsContainer"
-            android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@id/bookBt"
             android:padding="16dp"
             android:text="BACK"
             android:textColor="@color/colorAccent"
-
+            android:layout_centerInParent="true"
             />
 
         <Button
@@ -151,10 +164,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/f2DetailsContainer"
             android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@id/f2backBt"
+            android:layout_marginLeft="16dp"
             android:padding="16dp"
             android:text="CANCEL"
             android:textColor="@color/colorAccent"
+
             />
 
 

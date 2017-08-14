@@ -3,16 +3,23 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/alert_menu"
+        android:icon="@drawable/alert"
         android:orderInCategory="1"
         android:title="Alert Setting"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/alert"
         />
 
-    <item android:id="@+id/info_menu"
+    <item
+        android:id="@+id/info_menu"
         android:icon="@drawable/information"
-        android:title="Know more"
-        app:showAsAction="ifRoom"
-        android:orderInCategory="2"/>
+        android:orderInCategory="2"
+        android:title="About"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="1"
+        android:title="Log out"
+        app:showAsAction="never"
+        />
 
 </menu>

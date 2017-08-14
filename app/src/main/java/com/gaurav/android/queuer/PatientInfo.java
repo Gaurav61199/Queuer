@@ -10,7 +10,6 @@ public class PatientInfo  {
     public String pName=null;   // patient's name
     public String pContact=null;
     public String pGender;
-    public int pID;
     public String tDateTime;   // today's date and time
     public Integer tokenNo;
     public String cName;   // clinic name

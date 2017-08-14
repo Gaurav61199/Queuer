@@ -2,6 +2,7 @@ package com.gaurav.android.queuer;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Queuer extends AppCompatActivity {
@@ -32,6 +34,7 @@ public class Queuer extends AppCompatActivity {
 
 
         mToolbar = (Toolbar) findViewById(R.id.home_toolbar);
+        mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         mRecyclerView = (RecyclerView) findViewById(R.id.appRecyclerView);
         GetArrayList gal = ((GetArrayList) getApplicationContext());
@@ -83,6 +86,10 @@ public class Queuer extends AppCompatActivity {
         if (id == R.id.alert_menu) {
             Toast.makeText(this, "Alert Selected", Toast.LENGTH_SHORT).show();
         }
+        if (id == R.id.logout) {
+            FirebaseAuth.getInstance().signOut();
+        }
+
         return true;
     }
     // this method is override to close the app on back press when user in queuer activity

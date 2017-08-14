@@ -3,7 +3,9 @@ package com.gaurav.android.queuer;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +25,6 @@ import com.google.firebase.database.Transaction;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Random;
 
 /**
  * Created by Gaurav on 6/28/2017.
@@ -32,12 +34,13 @@ public class SFragment extends Fragment implements View.OnClickListener {
     private EditText mEditText1, mEditText2;
     private RadioGroup mGenderRadioGroup;
     private Button cancelBt, bookBt,backBt;
-    private Random mRandom;
     private String mDateTime;
     private DatabaseReference ATNRef, PatInfoDB, rootRef;
     private Integer temp;
     private Toolbar mToolbar;
     private Calendar mCalendar;
+    private LinearLayoutCompat progressview;
+    private RelativeLayout f2cont;
     PatientInfo data = new PatientInfo();
     String lClinic, lPlace;
 
@@ -49,12 +52,15 @@ public class SFragment extends Fragment implements View.OnClickListener {
         mToolbar=(Toolbar) getActivity().findViewById(R.id.form_toolbar);
         mToolbar.setTitle(lClinic);
         mToolbar.setSubtitle(lPlace);
+        mToolbar.setSubtitleTextColor(Color.WHITE);
         cancelBt = (Button) v.findViewById(R.id.quitBooking);
         bookBt = (Button) v.findViewById(R.id.bookBt);
         backBt=(Button)v.findViewById(R.id.f2backBt);
         mEditText1 = (EditText) v.findViewById(R.id.enterName);
         mEditText2 = (EditText) v.findViewById(R.id.enterContact);
         mGenderRadioGroup = (RadioGroup) v.findViewById(R.id.GenderRadioGroup);
+        progressview = (LinearLayoutCompat) v.findViewById(R.id.TokenFetchingProgressBar);
+        f2cont = (RelativeLayout) v.findViewById(R.id.f2Container);
         rootRef = FirebaseDatabase.getInstance().getReference();
 
 
@@ -99,14 +105,15 @@ public class SFragment extends Fragment implements View.OnClickListener {
                 data.pContact = mEditText2.getText().toString();
                 data.cName = lClinic;
                 data.cPlace = lPlace;
-                mRandom = new Random();
-                data.pID = mRandom.nextInt(10000);
                 data.tDateTime = mDateTime;
                 data.mCalendar = mCalendar;
 
                 if (data.pName.isEmpty() || data.pContact.isEmpty() || (data.pGender == null)) {
                     Toast.makeText(getActivity(), "Enter complete patient's detail", Toast.LENGTH_SHORT).show();
                 } else {
+                    f2cont.setVisibility(View.GONE);
+                    progressview.setVisibility(View.VISIBLE);
+                    Toast.makeText(getActivity(), lPlace + lClinic + "", Toast.LENGTH_SHORT).show();
                     ATNRef = rootRef.child(lPlace).child("Clinics").child(lClinic).child("AvailableTokenNumber");
 
                     ATNRef.runTransaction(new Transaction.Handler() {

@@ -7,7 +7,7 @@
                                        android:background="@color/colorPrimary"
                                        android:elevation="@dimen/toolbar_elevation"
                                        android:minHeight="56dp"
-                                       android:theme="@style/CustomTheme">
+    >
 
 </android.support.v7.widget.Toolbar>
 
